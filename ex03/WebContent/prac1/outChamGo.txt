@@ -1,0 +1,65 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<% 
+request.setCharacterEncoding("UTF-8"); 
+String writer = request.getParameter("writer");
+String date = request.getParameter("date");
+String title = request.getParameter("title");
+String text = request.getParameter("text");
+%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> practice에서 조회한 것을 OUT해주는 부분 </title>
+</head>
+
+<body>
+	<table border = "1">
+	<form>
+		
+		<tr>
+			<th  width="250" bgcolor="#FFEEFF"><h2>순번</h2></th>
+			<th  width="250" bgcolor="#FFEEFF"><h2>작성자</h2></th>
+			<th  width="250" bgcolor="#FFEEFF"><h2>작성일자</h2></th>
+			<th  width="250" bgcolor="#FFEEFF"><h2>제목</h2></th>
+		</tr>
+
+		<tr>
+		
+			<td>
+				<%=writer%>
+				
+			</td>
+			<td>
+				<% out.print(writer); %>
+				
+			</td>
+			<td>
+				<%=date %>
+				
+			</td>
+			<td>
+				<%=title %>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td colspan="4">
+				<%=text %>
+				
+			</td>
+		</tr>
+
+	</form>
+	</table>
+
+</html>
+
+
+
+
+

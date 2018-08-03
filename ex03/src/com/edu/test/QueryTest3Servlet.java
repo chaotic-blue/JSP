@@ -7,9 +7,7 @@ import javax.servlet.http.*;
 
 @WebServlet("/queryTest3") //어노테이션 연결방법
 public class QueryTest3Servlet extends HttpServlet {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
