@@ -52,7 +52,7 @@
 
 		<tr >
 			<td colspan="2" ><input type="submit" name="Update" value="Update" class="btn btn-danger btn-lg"  width="100">
-							<button type="button" class="btn btn-primary btn-lg"  width="100">Cancel</button>
+							<input type="reset" name="Cancle" value="Cancle" class="btn btn-primary btn-lg" width="100">
 			</td>
 		 	
 		</tr>
@@ -61,4 +61,5 @@
 
 </html>
 
+<!-- style="background-color:purple;border-color:red;font-face:굴림;font-size:9pt" -->
 

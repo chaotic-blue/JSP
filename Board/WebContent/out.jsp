@@ -5,7 +5,7 @@
 	//String date = request.getParameter("date");
 %>
 
-<jsp:useBean id="b" class="com.javalec.ex04.Prac"/>
+<jsp:useBean id="b" class="com.javalec.board.BoardDTO"/>
 <jsp:setProperty name="b" property="*"/>
 
 
