@@ -8,9 +8,10 @@
     <style>
         #wrap{
             width:530px;
-            margin-left:auto; 
-            margin-right:auto;
-            text-align:center;
+            text-align : left;
+            margin-left : auto; 
+            margin-right : auto;
+            
         }
         
         table{
@@ -38,7 +39,7 @@
                 <tr>
                     <td id="title">아이디</td>
                     <td>
-                        <input type="text" name="id" maxlength="15">
+                        <input type="text" name="id" maxlength="15">&nbsp;&nbsp;&nbsp;
                         <input type="button" value="중복확인" >    
                     </td>
                 </tr>
