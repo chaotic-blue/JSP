@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>회원가입 화면</title>
+    <title>회원가입</title>
     
     <style>
         #wrap{
@@ -11,36 +11,64 @@
             text-align : left;
             margin-left : auto; 
             margin-right : auto;
-            
+          
         }
         
         table{
-            border:3px solid skyblue
+            border:3px dashed Green
         }
         
         td{
-            border:1px solid skyblue
+            border:2px solid skyblue
         }
         
         #title{
-            background-color:skyblue
+            background-color:#aaaadd
         }
     </style>
+    
+    <script type="text/javascript">
+    
+        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+        function checkValue()
+        {
+            if(!document.userInfo.id.value){
+                alert("아이디를 입력하세요.");
+                return false;
+            }
+            
+            if(!document.userInfo.password.value){
+                alert("비밀번호를 입력하세요.");
+                return false;
+            }
+            
+            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+                alert("비밀번호를 동일하게 입력하세요.");
+                return false;
+            }
+        }
+        
+        function goLoginForm() { /* 취소버튼 누르면 LoginForm화면으로 가는 함수 정의 */
+            location.href="LoginForm.jsp";
+        }
+
+    </script>
+    
 </head>
 <body>
-    <!-- 왼쪽, 오른쪽 바깥여백을 auto 하면 중앙정렬.  -->
     <div id="wrap">
         <br><br>
-        <b><font size="6" color="gray">회원가입</font></b>
-        <br><br><br>
+        <p style="text-align:center; color: gray; font-size: 40px">회원가입</p>
+ 
         
-        <form>
+        <form method="post" action="../pro/joinPro.jsp" name="userInfo" onsubmit="return checkValue()">
             <table>
                 <tr>
                     <td id="title">아이디</td>
                     <td>
                         <input type="text" name="id" maxlength="15">&nbsp;&nbsp;&nbsp;
-                        <input type="button" value="중복확인" >    
+                        <input type="button" value="중복확인" > 
                     </td>
                 </tr>
                         
@@ -54,14 +82,14 @@
                 <tr>
                     <td id="title">비밀번호 확인</td>
                     <td>
-                        <input type="password" name="password" maxlength="15">
+                        <input type="password" name="passwordcheck" maxlength="15">
                     </td>
                 </tr>
                     
                 <tr>
                     <td id="title">이름</td>
                     <td>
-                        <input type="text" name="name" maxlength="40">
+                        <input type="text" name="name" maxlength="25">
                     </td>
                 </tr>
                     
@@ -76,35 +104,35 @@
                 <tr>
                     <td id="title">생일</td>
                     <td>
-                        <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6" >
-                        <select name="birth_mm">
+                        <input type="text" name="birthyy" maxlength="4" placeholder="년(ex:1990)" size="6" >
+                        <select name="birthmm">
                             <option value="">월</option>
-                            <option value="01" >1</option>
-                            <option value="02" >2</option>
-                            <option value="03" >3</option>
-                            <option value="04" >4</option>
-                            <option value="05" >5</option>
-                            <option value="06" >6</option>
-                            <option value="07" >7</option>
-                            <option value="08" >8</option>
-                            <option value="09" >9</option>
-                            <option value="10" >10</option>
-                            <option value="11" >11</option>
-                            <option value="12" >12</option>
+                            <option value="01" >1월</option>
+                            <option value="02" >2월</option>
+                            <option value="03" >3월</option>
+                            <option value="04" >4월</option>
+                            <option value="05" >5월</option>
+                            <option value="06" >6월</option>
+                            <option value="07" >7월</option>
+                            <option value="08" >8월</option>
+                            <option value="09" >9월</option>
+                            <option value="10" >10월</option>
+                            <option value="11" >11월</option>
+                            <option value="12" >12월</option>
                         </select>
-                        <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4" >
+                        <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4" >
                     </td>
                 </tr>
                     
                 <tr>
                     <td id="title">이메일</td>
                     <td>
-                        <input type="text" name="email_1" maxlength="30">@
-                        <select name="email_2">
+                        <input type="text" name="mail1" maxlength="30">@
+                        <select name="mail2">
                             <option>naver.com</option>
                             <option>daum.net</option>
                             <option>gmail.com</option>
-                            <option>nate.com</option>                        
+                            <option>nate.com</option>
                         </select>
                     </td>
                 </tr>
@@ -113,6 +141,7 @@
                     <td id="title">휴대전화</td>
                     <td>
                         <input type="text" name="phone" />
+                         	<font size="2" color="gray">( - 제외 입력 ) </font>
                     </td>
                 </tr>
                 <tr>
@@ -123,7 +152,8 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" value="가입"/>  <input type="button" value="취소">
+            <input type="submit" value="가입">  
+            <input type="button" value="취소" onclick="goLoginForm()">
         </form>
     </div>
 </body>
