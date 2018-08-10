@@ -32,15 +32,15 @@
         }
         else if(check == 0) // 비밀번호가 틀릴경우
         {
-            msg = "../view/LoginForm.jsp?msg=0";
+            msg = "../MainForm.jsp?contentPage=view/LoginForm.jsp?msg=0";
         }
         else    // 아이디가 틀릴경우
         {
-            msg = "../view/LoginForm.jsp?msg=-1";
+            msg = "../MainForm.jsp?contentPage=view/LoginForm.jsp?msg=-1";
         }
          
         // sendRedirect(String URL) : 해당 URL로 이동
-        // URL뒤에 get방식 처럼 데이터를 전달가능
+        // URL뒤에 get방식 처럼 데이터를 전달가능!!!!! 
         response.sendRedirect(msg);
     %>
 </body>

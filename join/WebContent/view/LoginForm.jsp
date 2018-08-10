@@ -10,6 +10,24 @@
     
     <title>로그인</title>
     
+    <style type="text/css">
+		table{
+			padding: 60px 0px;
+			margin-left:auto; 
+			margin-right:auto;
+			border:3px solid red;
+		}
+		
+		td{
+			border:1px solid skyblue
+		}
+		
+		#title{
+			background-color:skyblue
+		}
+	</style>
+
+
     <script type="text/javascript">
     
         function checkValue()
@@ -29,22 +47,25 @@
             }
         }
     
-        // 회원가입 버튼 클릭시 회원가입 화면으로 이동
-        function goJoinForm() {
-            location.href="join.jsp";
-        }
+     	// 취소 버튼 클릭시 첫화면으로 이동
+		function goJoinForm() {
+			location.href="MainForm.do";
+		}
         
     </script>
  
 </head>
 <body>
-    <div id="wrap" text-align="center">
-        <form name="loginInfo" method="post" action="../pro/LoginPro.jsp" 
-                onsubmit="return checkValue()">
+    <div id="wrap">
+    	<br><br>
+		<b><font size="6" color="gray">로그인</font></b>
+		<br><br><br>
+		
+        <form name="loginInfo" method="post" action="MemberLoginAction.do" onsubmit="return checkValue()">
         
             <!-- 이미지 추가 -->
-            <img src="../img/welcome.jpg">
-            <br><br>
+            <!-- <img src="../img/welcome.jpg">
+            <br><br> -->
             
             <table>
                 <tr>
@@ -58,7 +79,7 @@
             </table>
             <br>
             <input type="submit" value="로그인"/>
-            <input type="button" value="회원가입" onclick="goJoinForm()" />
+            <input type="button" value="취소" onclick="goJoinForm()" />
         </form>
         
         <% 

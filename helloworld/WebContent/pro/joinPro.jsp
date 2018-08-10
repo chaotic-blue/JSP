@@ -33,6 +33,16 @@
         }
     </style>
     
+    
+    <script type="text/javascript"> /* 회원정보확인 화면에서 확인버튼 누르면 메인화면으로 가기위해 goMainForm()메소드 작성  */
+    
+    	function goMainForm() {
+       		 location.href="../MainForm.jsp";
+  		  }
+    
+    </script> 
+    
+    
 </head>
 <body>
 
@@ -105,7 +115,7 @@
         </table>
         
         <br>
-        <input type="button" value="확인">
+        <input type="button" value="확인" onclick="goMainForm()">
     </div>
 </body>
 </html>

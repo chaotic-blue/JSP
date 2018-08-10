@@ -5,27 +5,26 @@
 <head>
     <title>회원가입</title>
     
-    <style>
-        #wrap{
-            width:530px;
-            text-align : left;
-            margin-left : auto; 
-            margin-right : auto;
-          
-        }
-        
-        table{
-            border:3px dashed Green
-        }
-        
-        td{
-            border:2px solid skyblue
-        }
-        
-        #title{
-            background-color:#aaaadd
-        }
+	<style type="text/css">
+		
+		table{
+
+			margin-left:auto; 
+			margin-right:auto;
+			border:3px dashed Green;
+			text-align : center;
+		}
+		
+		td{
+			text-align : left;
+			border:2px solid red;
+		}
+		
+		#title{
+			background-color:#aaaadd;
+		}
     </style>
+    
     
     <script type="text/javascript">
     
@@ -43,14 +42,14 @@
             }
             
             // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+            if(document.userInfo.password.value != document.userInfo.passwordcheck.value){
                 alert("비밀번호를 동일하게 입력하세요.");
                 return false;
             }
         }
         
-        function goLoginForm() { /* 취소버튼 누르면 LoginForm화면으로 가는 함수 정의 */
-            location.href="LoginForm.jsp";
+        function goMainForm() { /* 취소버튼 누르면 MainForm화면으로 가는 함수 정의 */
+            location.href="MainForm.jsp";
         }
 
     </script>
@@ -62,13 +61,13 @@
         <p style="text-align:center; color: gray; font-size: 40px">회원가입</p>
  
         
-        <form method="post" action="../pro/joinPro.jsp" name="userInfo" onsubmit="return checkValue()">
+        <form method="post" action="MemberJoinAction.do" name="userInfo" onsubmit="return checkValue()">
             <table>
                 <tr>
                     <td id="title">아이디</td>
                     <td>
                         <input type="text" name="id" maxlength="15">&nbsp;&nbsp;&nbsp;
-                        <input type="button" value="중복확인" > 
+                        <!-- <input type="button" value="중복확인" >  -->
                     </td>
                 </tr>
                         
@@ -153,7 +152,7 @@
             </table>
             <br>
             <input type="submit" value="가입">  
-            <input type="button" value="취소" onclick="goLoginForm()">
+            <input type="button" value="취소" onclick="goMainForm()">
         </form>
     </div>
 </body>
